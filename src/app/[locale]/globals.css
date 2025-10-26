@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-radio {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #4A5568;
+  /* لون الإطار */
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-radio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: "#1E4C83";
+  /* لون التحديد */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked+.custom-radio::before {
+  opacity: 1;
+}
+
+input[type="radio"]:focus+.custom-radio {
+  outline: 2px solid #3182CE;
+  outline-offset: 2px;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+::-ms-reveal {
+  border: 1px solid red;
+}

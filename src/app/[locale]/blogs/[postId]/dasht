@@ -1,0 +1,170 @@
+import React from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import BlogsCart from "@/app/_components/BlogsCart";
+import Image from "next/image";
+
+// var onclick: ((this: Window, ev: MouseEvent) => any) | null;
+
+const Blogs: React.FC = () => {
+  const t = useTranslations("languageSchool");
+  const f = useTranslations("filtration");
+
+  return (
+    <>
+      <div className="flex flex-col justify-center items-center bg-secondColor">
+        <div className="flex flex-col items-start self-center pl-20 mt-5 w-full text-start text-primary max-w-[1300px] max-md:pl-5 max-md:max-w-full ">
+          <nav aria-label="Breadcrumb">
+            <ol className="flex items-center gap-1 text-sm text-gray-600">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+              </li>
+              <li>
+                {/* <Link href={`/${params.lang}/`} className="block transition hover:text-gray"> {lang.languageSchool.breadhome} </Link> */}
+                <Link href={`/`} className="block transition hover:text-gray">
+                  {" "}
+                  {t("breadhome")}
+                </Link>
+              </li>
+
+              <li className="rtl:rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </li>
+
+              <li>
+                <Link href="#" className="block transition hover:text-gray">
+                  {/* {lang.languageSchool.head}  */}
+                  {/* {t("head")} */}
+                  Blogs
+                </Link>
+              </li>
+            </ol>
+          </nav>
+          <div className="mt-5 text-4xl font-bold">
+            {" "}
+            {/* {t("head")} */}
+            {/* {lang.languageSchool.head} */}
+            Blogs
+          </div>
+        </div>
+      </div>
+      {/* ---------------------------------------------------blogs----------------------------------------------- */}
+      <div className="bg-secondColor px-20 pt-5">
+        <div className="flex overflow-hidden flex-col px-8 pt-8 pb-36 bg-white rounded-3xl shadow-[2px_4px_24px_rgba(0,0,0,0.09)] max-md:px-5 max-md:pb-24">
+          <div className="flex flex-col w-full text-center max-md:max-w-full">
+            <div className="text-4xl font-medium tracking-tight text-black max-md:max-w-full">
+              Find the best articles that will benefit you!
+            </div>
+            <div className="mt-4 text-base text-slate-500 max-md:max-w-full">
+              Find, review and apply for the best language articles and
+              institutes in the world.
+            </div>
+          </div>
+          <div className="flex flex-col mt-8 w-full text-base capitalize text-zinc-500 max-md:max-w-full">
+            <div className="flex flex-col gap-6 justify-center  w-full bg-white rounded-2xl border border-solid border-neutral-200 max-md:px-5 max-md:max-w-full">
+              <div className="flex flex-wrap gap-2.5 items-center px-2.5 py-4 w-full bg-gray-50 rounded-xl min-h-[60px] max-md:max-w-full">
+                <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M9.41668 1.87996C4.61956 2.46361 1.20388 6.82559 1.78753 11.6227C2.37119 16.4198 6.73316 19.8355 11.5303 19.2519C16.3274 18.6682 19.7431 14.3062 19.1594 9.50911C18.5758 4.71199 14.2138 1.29631 9.41668 1.87996ZM0.298512 11.8039C-0.385197 6.18439 3.61603 1.07465 9.23551 0.390941C14.855 -0.292768 19.9647 3.70846 20.6484 9.32794C20.9577 11.8697 20.3085 14.3072 18.9845 16.278L22.6272 19.1304C22.9533 19.3858 23.0106 19.8572 22.7553 20.1833C22.4999 20.5094 22.0285 20.5668 21.7024 20.3114L18.0597 17.459C16.4639 19.2169 14.2532 20.4316 11.7114 20.7409C6.09196 21.4246 0.982221 17.4234 0.298512 11.8039Z" fill="#6C7278" />
+                </svg>
+
+                <input
+                  type="search"
+                  className="flex-1 shrink self-stretch my-auto basis-0 max-md:max-w-full focus:outline-none"
+                  placeholder="Search for articles"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-10 items-start mt-8 w-full max-md:max-w-full">
+            <div className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">
+              {/* ---------------------------------------first card___________________________________-- */}
+              <div className="flex flex-wrap gap-6 items-end w-full max-md:max-w-full">
+                {<BlogsCart />}
+                {/* ------------------------------------------------------------------------------------ */}
+                {<BlogsCart />}
+                {<BlogsCart />}
+              </div>
+              <div className="flex flex-wrap gap-6 items-end mt-10 w-full max-md:max-w-full">
+                {<BlogsCart />}
+                {<BlogsCart />}
+                {<BlogsCart />}
+              </div>
+            </div>
+          </div>
+          {/* <div className="flex flex-wrap gap-10 items-start pt-10">
+            <div className="flex gap-2.5 items-start min-w-[240px]">
+              <div className="flex flex-col justify-center items-center px-3 py-2.5 bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] w-[39px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/302fbaf026f850c756633e1f2717715afb7177d86972dceef019f9fd1e8f092a?placeholderIfAbsent=true&apiKey=0ca6123f87c44837b7a8fe7bc7c2fec6"
+                  className="object-contain w-4 aspect-square"
+                />
+              </div>
+              <div className="px-3 py-2.5 text-xs font-semibold text-black whitespace-nowrap bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] w-[39px]">
+                10
+              </div>
+              <div className="px-3 py-2 text-sm font-semibold text-black whitespace-nowrap bg-white rounded-lg min-h-[35px] w-[39px]">
+                ...
+              </div>
+              <div className="px-3 py-2.5 text-xs font-semibold text-black whitespace-nowrap bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] w-[39px]">
+                3
+              </div>
+              <div className="px-3 py-2.5 text-xs font-semibold text-black whitespace-nowrap bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] w-[39px]">
+                2
+              </div>
+              <div className="px-3 py-2.5 text-xs font-semibold text-white whitespace-nowrap bg-blue-900 rounded-lg min-h-[35px] w-[39px]">
+                1
+              </div>
+              <div className="flex flex-col justify-center items-center px-3 py-2.5 bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] w-[39px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/23c4786bc67b06991aee7361007b9114a9445b18cb9c57d0e2d7856a89d14a42?placeholderIfAbsent=true&apiKey=0ca6123f87c44837b7a8fe7bc7c2fec6"
+                  className="object-contain w-4 aspect-square"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap flex-1 shrink gap-2.5 items-center text-center basis-0 min-w-[240px] max-md:max-w-full">
+              <div className="flex gap-4 justify-center items-center self-stretch px-4 py-2 my-auto w-20 text-xs font-semibold whitespace-nowrap bg-white rounded-lg border border-solid border-zinc-100 min-h-[35px] text-stone-950">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/70959bcf13b97976572dde6424a18729e2edf6d0a303cdbda0bc520b9a3a6302?placeholderIfAbsent=true&apiKey=0ca6123f87c44837b7a8fe7bc7c2fec6"
+                  className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
+                />
+                <div className="self-stretch my-auto">10</div>
+              </div>
+              <div className="self-stretch my-auto text-sm font-medium text-zinc-500">
+                Number of items displayed
+              </div>
+            </div>
+          </div> */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Blogs;

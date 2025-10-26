@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* شكل الحاوية */
+.swiper-pagination {
+    bottom: 10px !important;
+    /* المسافة من تحت */
+    text-align: center;
+    position: static !important;
+}
+
+/* شكل كل نقطة */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    /* لون النقطة */
+    opacity: 1;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+/* النقطة المفعّلة */
+.swiper-pagination-bullet-active {
+    background-color: #F89A21 !important;
+    /* لون النقطة المُفعلة */
+    transform: scale(1.2);
+}
+
+
+/* .wrapper-card {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+}
+
+.wrapper-card::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+    margin-block: 15px 30px;
+}
+
+.card::scroll-marker {
+    content: "";
+    height: 1em;
+    width: 1em;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.card::scroll-marker:target-current {
+    background-color: #F89A21;
+}
+
+.wrapper-card::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper-card .card {
+    scroll-snap-align: start;
+    flex: 0 0 calc(50% - .5em);
+    aspect-ratio: 5 / 3;
+} */
