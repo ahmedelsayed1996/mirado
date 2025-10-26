@@ -26,8 +26,8 @@ const config: Config = {
           "linear-gradient(180deg, rgba(1, 1, 1, 0.00) 0%, #010101 91.67%)",
       },
       colors: {
-        primary: "#1E4C83",
-        black: "#141522",
+        primary: "#d2b469",
+        black: "#000000",
         gray: "#D6DDEB",
         secondColor: "#F8F9FA",
       },

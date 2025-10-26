@@ -131,10 +131,10 @@ const NewHeader: FC = () => {
   // }, [isOpen]);
 
   return (
-    <header className="bg-white leading-10 sticky top-0 z-20">
-      <nav className="relative bg-white shadow ">
+    <header className="bg-black leading-10 sticky top-0 z-20 py-4">
+      <nav className="relative bg-black shadow ">
         <div className="@container/main px-6 md:px-12 lg:px-20 py-2 xl:py-0 mx-auto">
-          <div className={`xl:flex xl:items-center lg:justify-between xl:justify-center  xl:${locale == "ar" ? "gap-0" : "gap-8"}`}>
+          <div className={`xl:flex xl:items-center lg:justify-between xl:justify-between  xl:${locale == "ar" ? "gap-0" : "gap-8"}`}>
             <div className="flex items-center justify-between ">
               <Link
                 href={`/${language}`}
@@ -143,7 +143,7 @@ const NewHeader: FC = () => {
                 <Image
                   src="/logo.svg"
                   alt="eduxa logo"
-                  width={90}
+                  width={200}
                   height={80}
                 />
               </Link>
@@ -205,7 +205,7 @@ const NewHeader: FC = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     className={`px-4 py-2 text-base border-b border-solid  max-md:px-2.5 max-md:py-2 hover:border-b-primary hover:text-primary ${currentPath === `/${language}`
                       ? "font-bold text-primary border-b-primary"
-                      : "font-semibold text-black border-b-gray"
+                      : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("home")}
@@ -217,7 +217,7 @@ const NewHeader: FC = () => {
                                             hover:border-b-primary hover:text-primary  
                                           ${currentPath.includes("university")
                         ? "font-bold text-primary border-b-primary"
-                        : "font-semibold text-black border-b-gray"
+                        : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("Universities")}
@@ -231,7 +231,7 @@ const NewHeader: FC = () => {
                       "language-schools"
                     )
                         ? "font-bold text-primary border-b-primary"
-                        : "font-semibold text-black border-b-gray"
+                        : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("institutes")}
@@ -243,7 +243,7 @@ const NewHeader: FC = () => {
                                             hover:border-b-primary hover:text-primary  
                                            ${currentPath.includes("about")
                         ? "font-bold text-primary border-b-primary"
-                        : "font-semibold text-black border-b-gray"
+                        : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("whoWeAre")}
@@ -256,7 +256,7 @@ const NewHeader: FC = () => {
                                             hover:border-b-primary hover:text-primary  
                                             ${currentPath.includes("contact")
                         ? "font-bold text-primary border-b-primary"
-                        : "font-semibold text-black border-b-gray"
+                        : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("contact")}
@@ -268,7 +268,7 @@ const NewHeader: FC = () => {
                                             hover:border-b-primary hover:text-primary  
                                             ${currentPath.includes("faq")
                         ? "font-bold text-primary border-b-primary"
-                        : "font-semibold text-black border-b-gray"
+                        : "font-semibold text-white border-b-gray"
                       }`}
                   >
                     {t("FAQ")}
@@ -277,6 +277,7 @@ const NewHeader: FC = () => {
                 {/* popup language */}
               </div>
 
+            </div>
               {/* popup profile */}
               <div className="me-1 md:mx-6 lg:mx-8 xl:mx-0 my-3 md:block">
                 {isLoggedIn ? (
@@ -597,71 +598,37 @@ const NewHeader: FC = () => {
                   (
                     <div className="flex gap-2 grow ms-4">
                       <Link
-                        className="inline-flex items-center gap-2 rounded-3xl bg-primary  border hover:border-primary hover:text-primary hover:bg-white  duration-300  px-3 py-0 text-base font-medium text-white focus:relative transition ease-in-out delay-150"
+                        className="inline-flex items-center gap-2 rounded-3xl hover:border-primary hover:text-primary  duration-300   py-0 text-base font-medium text-white focus:relative transition ease-in-out delay-150"
                         href={`/${language}/register`}
                       >
-                        <svg
-                          width="17"
-                          height="18"
-                          viewBox="0 0 19 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className=" fill-primary group-hover:fill-white"
-                        >
-                          <path
-                            d="M9.49935 10.0007C11.6855 10.0007 13.4577 8.22844 13.4577 6.04232C13.4577 3.85619 11.6855 2.08398 9.49935 2.08398C7.31322 2.08398 5.54102 3.85619 5.54102 6.04232C5.54102 8.22844 7.31322 10.0007 9.49935 10.0007Z"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M16.3 17.9167C16.3 14.8529 13.2521 12.375 9.49963 12.375C5.74713 12.375 2.69922 14.8529 2.69922 17.9167"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 6C6.79565 6 7.55871 5.68393 8.12132 5.12132C8.68393 4.55871 9 3.79565 9 3C9 2.20435 8.68393 1.44129 8.12132 0.87868C7.55871 0.316071 6.79565 0 6 0C5.20435 0 4.44129 0.316071 3.87868 0.87868C3.31607 1.44129 3 2.20435 3 3C3 3.79565 3.31607 4.55871 3.87868 5.12132C4.44129 5.68393 5.20435 6 6 6ZM8 3C8 3.53043 7.78929 4.03914 7.41421 4.41421C7.03914 4.78929 6.53043 5 6 5C5.46957 5 4.96086 4.78929 4.58579 4.41421C4.21071 4.03914 4 3.53043 4 3C4 2.46957 4.21071 1.96086 4.58579 1.58579C4.96086 1.21071 5.46957 1 6 1C6.53043 1 7.03914 1.21071 7.41421 1.58579C7.78929 1.96086 8 2.46957 8 3ZM12 11C12 12 11 12 11 12H1C1 12 0 12 0 11C0 10 1 7 6 7C11 7 12 10 12 11ZM11 10.996C10.999 10.75 10.846 10.01 10.168 9.332C9.516 8.68 8.289 8 6 8C3.71 8 2.484 8.68 1.832 9.332C1.154 10.01 1.002 10.75 1 10.996H11Z" fill="white" />
                         </svg>
 
-                        {t("createAccount")}
+
+                        {t("createAccount")} /
                       </Link>
 
                       <Link
                         href={`/${language}/login`}
-                        className="inline-flex items-center gap-2 rounded-3xl bg-white px-3 py-2 text-base font-medium text-primary border border-primary hover:text-white hover:bg-primary transition-all duration-300 focus:relative"
+                        className="inline-flex items-center gap-2 rounded-3xl hover:border-primary hover:text-primary  duration-300   py-0 text-base font-medium text-white focus:relative transition ease-in-out delay-150"
                       >
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className=" fill-primary group-hover:fill-white"
-                        >
-                          <path
-                            d="M11.6673 11.8773V13.619C10.9131 13.3523 10.1059 13.2705 9.31349 13.3805C8.52109 13.4904 7.76665 13.7889 7.11351 14.2508C6.46037 14.7128 5.9276 15.3247 5.55995 16.0352C5.1923 16.7457 5.0005 17.534 5.00065 18.334L3.33398 18.3332C3.33373 17.3156 3.56642 16.3114 4.01423 15.3976C4.46205 14.4839 5.1131 13.6848 5.9175 13.0615C6.7219 12.4383 7.6583 12.0074 8.65495 11.802C9.65159 11.5966 10.682 11.6221 11.6673 11.8765V11.8773ZM10.0007 10.834C7.23815 10.834 5.00065 8.59648 5.00065 5.83398C5.00065 3.07148 7.23815 0.833984 10.0007 0.833984C12.7632 0.833984 15.0007 3.07148 15.0007 5.83398C15.0007 8.59648 12.7632 10.834 10.0007 10.834ZM10.0007 9.16732C11.8423 9.16732 13.334 7.67565 13.334 5.83398C13.334 3.99232 11.8423 2.50065 10.0007 2.50065C8.15898 2.50065 6.66732 3.99232 6.66732 5.83398C6.66732 7.67565 8.15898 9.16732 10.0007 9.16732ZM16.6673 14.1673H19.1673V15.834H16.6673V18.7507L12.5007 15.0007L16.6673 11.2507V14.1673Z"
-                            className="fill-current"
-                          />
-                        </svg>
-
                         {t("Login")}
                       </Link>
                     </div>
                   )}
               </div>
-            </div>
           </div>
         </div>
       </nav>
-{/* Overlay when mobile menu is open */}
-{isOpen && (
-  <button
-    aria-label="Close menu overlay"
-    onClick={() => setIsOpen(false)}
-    className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-10 xl:hidden"
-  />
-)}
+      {/* Overlay when mobile menu is open */}
+      {isOpen && (
+        <button
+          aria-label="Close menu overlay"
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-10 xl:hidden"
+        />
+      )}
 
     </header>
   );
